@@ -1,0 +1,18 @@
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+.column{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    grid-gap: 0 1px;
+    grid-auto-rows: 10px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 250px;
+  }
