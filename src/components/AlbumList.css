@@ -40,6 +40,17 @@
     font-size: 11pt;
 }
 
+.dropbtnn {
+    background-color: #4caf4f00;
+    font-family: "Poppins Regular";
+    color: #3b3a3a;
+    padding: 8px;
+    font-size: 12pt;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+
   /* Mobile View */
 
   @media screen and (max-width: 500px) {
