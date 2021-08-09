@@ -62,14 +62,12 @@ class AlbumList extends React.Component{
                 </div>
                 )
         });
-    
-    
-    //console.log(props.images);
+ 
 
         return (
             <div>
                 <div className="dropdown">
-                <a className="dropbtnn">Sort By: ASC</a>
+                <button className="dropbtnn">Sort By: ASC</button>
                     <div className="dropdown-content">
                                 <button onClick={this.sortAsc} className="dropbtnn">Sort By: ASC</button>
                                 <button className="dropbtnn" onClick={this.sortDesc}href="/">Sort By: DESC</button>
