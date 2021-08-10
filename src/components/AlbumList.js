@@ -1,6 +1,7 @@
 import React from 'react';
 import './AlbumList.css';
 import { Link } from 'react-router-dom';
+import {CSSTransition, TransitionGroup} from 'react-transition-group';
 
 import animal from './images/animal.jpg';
 import foods from './images/foods.jpg';
@@ -46,21 +47,29 @@ class AlbumList extends React.Component{
    
     render(){
 
+        
         const images = this.state.images.map((img) =>{
+            
+            console.log("Hiii");
             return (
-                <div key={img.id}>     
-                    <div className="card">
-                        <Link to={`/images/${img.text}`}  texte={{ text: "hello" }}>
-                            <img src={img.url} alt="Avatar" key={img.id}/>
-                        </Link>
-                        <div className="card-text">
-                            <h4>{img.text}</h4>
-                            <p>5 items</p>
+                <TransitionGroup>
+                    <CSSTransition key={img.id} timeout={1000} classNames="fade">
+                        <div key={img.id}>     
+                            <div className="card">
+                                <Link to={`/images/${img.text}`}>
+                                    <img src={img.url} alt="Avatar" key={img.id}/>
+                                </Link>
+                                <div className="card-text">
+                                    <h4>{img.text}</h4>
+                                    <p>5 items</p>
+                                </div>
+                            </div>
+                            
                         </div>
-                    </div>
-                    
-                </div>
+                    </CSSTransition>
+                </TransitionGroup>
                 )
+                
         });
  
 
@@ -73,10 +82,16 @@ class AlbumList extends React.Component{
                                 <button className="dropbtnn" onClick={this.sortDesc}href="/">Sort By: DESC</button>
                             </div>
                 </div>
-
+               <CSSTransition
+               in={true}
+               appear={true}
+               timeout={1000} classNames="fade">
                 <div className="container">
                     {images}
                 </div>
+                </CSSTransition>
+               
+               
             </div>
         )
     }

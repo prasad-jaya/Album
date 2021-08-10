@@ -8,7 +8,7 @@
 .card {
     /* Add shadows to create the "card" effect */
     /* box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); */
-    transition: 0.3s;
+    /* transition: 0.3s; */
     border-radius: 25px; 
     margin: 17px;
     width: 90%;
@@ -48,6 +48,39 @@
     border: none;
     cursor: pointer;
     border-radius: 20px;
+  }
+
+  .fade-appear {
+      opacity: 0;
+     
+  }
+
+  .fade-appear.fade-appear-active {
+      opacity: 1;
+      transition: opacity 1000ms linear;
+  }
+
+  .fade-enter{
+      opacity: 0;
+    
+  }
+
+  .fade-enter.fade-enter-active {
+      opacity: 1;
+      transition: opacity 300ms linear;
+  }
+
+  .fade-exit{
+      opacity: 1;
+  }
+
+  .fade-exit.fade-exit-active {
+      opacity: 0;
+      transition: opacity 300ms linear;
+  }
+
+  .fade-exit-done {
+      opacity: 0;
   }
 
   /* Mobile View */
